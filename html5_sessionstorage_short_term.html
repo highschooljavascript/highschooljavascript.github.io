@@ -1,0 +1,35 @@
+<style type="text/css"> p {background-color: green ; font-size: 24pt} </style>
+<script type="text/javascript">
+function myFunction() {
+var tempId=document.getElementById("paragraph3");
+if(typeof(Storage) === "undefined") 
+    {
+    tempId.innerHTML = "Sorry, your browser does not support web storage...";
+    } 
+    else if ( isNaN(sessionStorage.clickCount)  ) 
+            {
+            // declare session storage and set to 1
+            sessionStorage.clickCount = 1;
+            tempId.innerHTML = "Yay, your first click";
+            } else 
+                {
+	            sessionStorage.clickCount = eval(sessionStorage.clickCount)  +1;
+	            tempId.innerHTML = "You clicked " + sessionStorage.clickCount + " time(s).";
+                }
+}
+// end function
+</script>
+
+<body>
+<p>First paragraph. Demo of short term sessionStorage.varName  </p>
+<p onclick=myFunction()> 
+	Please keep clicking this 2nd paragraph 
+</p>
+<p id="paragraph3"> 
+	Third Paragraph 
+</p>
+</body>
+<!--  use sessionStorage.var for short term storage, browser tab close = reset
+ use localStorage.var  for long term storage, browser cache flush manually
+ type: localStorage.clear() in console!   Clearing browser cache does not clear storage
+ -->

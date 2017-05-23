@@ -1,0 +1,23 @@
+<style type="text/css"> p {background-color: green ; font-size: 24pt} </style>
+
+<script type="text/javascript">
+var counter=0;
+function myFunction () {
+	counter++;
+	tempId = document.getElementById("paragraph3");
+	// fetch the id of the paragraph then assign new text inside (inner)
+	tempId.innerHTML = "you have clicked " + counter + " times";
+}
+
+</script>
+
+
+<body>
+<p>This is the first paragraph. Demo of innerHTML property  </p>
+<p onclick=myFunction()> 
+	Please keep clicking this 2nd paragraph 
+</p>
+<p id="paragraph3"> 
+	Third Paragraph 
+</p>
+</body>

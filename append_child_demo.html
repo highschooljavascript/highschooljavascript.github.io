@@ -1,0 +1,44 @@
+=======================================
+<!--  the main purpose of this is to show the 3 methods to add new page elements
+createElement
+createTextNote
+appendChild
+appendChild
+  -->
+  
+<head>
+<script type="text/javascript">
+function myF (){
+// get ID of the body
+var myBodyId = document.getElementById("bodyId")	
+
+
+// Create an element node
+var myElement = document.createElement("p");             
+
+//  create text
+var myTextNode = document.createTextNode("Blah new text");  
+
+
+// Append the text message node to the element
+myElement.appendChild(myTextNode);                
+myBodyId.appendChild(myElement);                     
+// Append p element to body
+
+
+}  // close of function myF
+//    http://www.w3schools.com/jsref/met_node_appendchild.asp
+</script>
+
+</head>
+
+
+<body id="bodyId">
+This is the Body, Please start by pressing Ctrl+Shift+j<br><br>
+
+ 
+<button onclick=myF()> 
+	Click me.. 
+</button> 
+
+</body>

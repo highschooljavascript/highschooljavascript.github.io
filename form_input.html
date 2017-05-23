@@ -1,0 +1,23 @@
+<style type="text/css">
+#outputdiv {background-color: purple; font-size: 42pt; padding: 90px; margin: 10px; }
+</style>
+
+<script type="text/javascript">
+function myFunction()
+	{
+	var myId = document.getElementById("outputdiv");
+	// fetch the id, then fetch the form data and put into the div
+	myId.innerHTML = myForm.myText.value;
+	}
+</script>
+<body>
+	<div id="outputdiv"  > 
+		Type in a number below  
+	</div>
+
+	<form name="myForm" >
+		<input name="myText" type="text" >
+	</form><!-- end of form1 -->
+
+	<button onclick=myFunction() > Click me </button>
+</body>

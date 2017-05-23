@@ -1,0 +1,37 @@
+<head>
+<style type="text/css"> p{font-size: 24pt}</style>
+<title>Unicorn</title>
+
+<script type="text/javascript">
+var classList=["AL","LD","TN","MP","KP","ZW","RC","EH","SD"]; 
+var classList=[ "Marshall","Zane","Tay","Cece","William","Samson" ];
+var classList=["ChristainF","JacksonF","AnT","AriaC","EvanS","JackyZ","AnnaD","EduardoG"]; 
+
+function pickStudent() {
+var myRandomNum = Math.random();
+myRandomNum =    Math.floor(myRandomNum * (classList.length - 1)  ) ;
+console.log(myRandomNum);
+var tempId = document.getElementById("outputArea");
+tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
+
+// remove that student from the list
+if (myRandomNum > -1) 
+	{
+    classList.splice(myRandomNum, 1);
+	}
+console.log("list updated: " + classList)
+}
+// close of function 
+
+
+</script>
+</head>
+<body>
+<p>JavaScript Arrays/Lists -- Open the console window to see who remains.  Ctrl+Shift+J</p>
+<button onclick=pickStudent()  >
+    Pick a student...
+</button>
+<br><br>
+<img src="https://i.ytimg.com/vi/ELe76Xw2Bqk/maxresdefault.jpg" height=100>
+<p id="outputArea"></p>
+</body>

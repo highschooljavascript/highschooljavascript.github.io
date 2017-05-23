@@ -1,0 +1,18 @@
+ Volume in drive Y is Staff
+ Volume Serial Number is 064D-FB1A
+
+ Directory of Y:\ddccode2\staff\sample_code
+
+05/23/2017  12:14 PM    <DIR>          .
+05/23/2017  12:14 PM    <DIR>          ..
+05/23/2017  10:09 AM               955 append_child_demo.html
+05/23/2017  10:52 AM             1,130 arrays_ javascript.html
+05/23/2017  12:14 PM                 0 file_list.txt
+05/23/2017  10:07 AM               582 form_input.html
+05/23/2017  11:31 AM               436 functions_example.html
+05/23/2017  10:18 AM             1,274 html5_localstorage_longterm.html
+05/23/2017  09:38 AM             1,262 html5_sessionstorage_short_term.html
+05/23/2017  09:00 AM               578 innerHTML_property.html
+05/23/2017  10:13 AM    <DIR>          OLD EXAMPLES
+               8 File(s)          6,217 bytes
+               3 Dir(s)   7,951,003,648 bytes free
