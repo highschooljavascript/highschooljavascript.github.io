@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css"> 
+#menu { background-color: pink; padding: 30px; width:200px; }
+#container { height: 100vh; width: 100vw ;background-color: yellow;}
+body {background-color: red}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function myFunction(){
+    console.log("called function");
+}
+
+$(document).ready(function()
+{
+    $("#container").click(function(event){
+        console.log("clicked outside menu ");
+        myFunction();
+    });
+    
+    $("#menu").click(function(){
+        // don't trigger the parent elements aka body and container
+        event.stopPropagation();
+        console.log("menu clicked no function");
+    });
+
+
+
+});
+</script>
+</head>
+
+<body>
+<div id="container">
+
+<div id="menu" >
+    Menu
+</div>
+
+<p>
+This is body text paragraph. Please open the console log to see results. 
+</p>
+
+</div>
+<!-- close of container -->
+</body>
+</html>
