@@ -3,9 +3,18 @@
 <title>Unicorn</title>
 
 <script type="text/javascript">
-var classList=[ "Marshall","Zane","Tay","Cece","William","Samson" ];
-var classList=["ChristainF","JacksonF","AnT","AriaC","EvanS","JackyZ","AnnaD","EduardoG"]; 
-var classList=["AidenL","LukeD","TuN","MartinP","KhevinP","ZenW","ReyaC","EliH","SangD"]; 
+
+// global varirables
+var classList=["JacksonF","AnT","AriaC","EvanS","JackyZ","AnnaD","EduardoG","Nghi"]; 
+var classList=["JacksonF","AnT","AriaC","EvanS","JackyZ","AnnaD","EduardoG","Nils","Zack","Quince","Nghi"]; 
+
+var pickedStudentList = [];
+
+var classList=["AidenL","LukeD","TuN","MartinP","KhevinP","ZenW","Sang","EliH","Joe"]; 
+var classList=[ "Marshall","Zane","Tay","Cece","William","Samson","Joe" ];
+
+
+
 
 function pickStudent() {
 var myRandomNum = Math.random();
@@ -18,7 +27,18 @@ tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
 if (myRandomNum > -1) 
 	{
     classList.splice(myRandomNum, 1);
+    // deletion above
+
+    // append to new list below
+    // pickedStudentList
+    //  take the removed person add them to the list of picked students
+
+
+
 	}
+
+
+
 console.log("list updated: " + classList)
 }
 // close of function 

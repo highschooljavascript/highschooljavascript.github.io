@@ -1,0 +1,61 @@
+<head>
+
+<script type="text/javascript">
+
+function myF()
+{
+
+var memeFileName= "http://winkgo.com/wp-content/uploads/2016/08/67-Hilarious-Teacher-Memes-11.jpg";
+
+
+
+// Build aka create an image tag  
+var myElement = document.createElement("img");             
+
+// in the next 6 lines of code we add two attribues, height and src
+
+
+var myAttributeSrc = document.createAttribute("src");       
+// Create a "src" attribute
+myAttributeSrc.value = memeFileName;           
+// Set the value of the src attribute to the file name  src="some.png"
+myElement.setAttributeNode(myAttributeSrc);                          
+// connect the attribute to the element 
+
+
+var myAttributeH = document.createAttribute("height");       
+// Create a "src" attribute
+myAttributeH.value = "200px";           
+// Set the value of the src attribute to the file name  src="some.png"
+myElement.setAttributeNode(myAttributeH);                          
+// connect the attribute to the element 
+
+
+
+
+// the end,  find a target, then append (place) what we have built..
+
+// get ID of the div that's mostly invisible
+var myId = document.getElementById("memeresult")	
+myId.appendChild(myElement);                     
+// Append img element to div  should show up asap
+
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+<p onclick=myF()>
+	click me to append a picture with the attribute src="URL" 
+</p>
+
+
+<div id="memeresult">
+
+</div>
+
+</body>
