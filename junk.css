@@ -1,0 +1,18 @@
+.button{
+	height: 30px; 
+	width: 50px; 
+	float: right;
+	clear: both;
+ }
+	
+.sidebar{
+      height: 90px;
+	width: 9%;
+	margin-right: 9% ;
+	float : right;
+}
+	
+div {
+	border: 3px; 
+	border-style: dotted;
+}

@@ -1,4 +1,5 @@
 <head>
+<link rel="stylesheet" type="text/css" href="">
 <style type="text/css"> p{font-size: 24pt}</style>
 <title>Unicorn</title>
 
@@ -7,36 +8,42 @@
 // global varirables
 var classList = [];
 
-classList=["isaiah","aaron","cesar","dylan","emma","george","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
+classList=["isaiah","aaron","cesar","dylan","emma","george","jackson","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
+
 
 classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","hoku","ivan","jimmy","josh","kaila","kegan","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
 
-classList=["Adrian","Aidan","Andrew","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Jorge","Katie","Lily","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"]
+classList=["Adrian","Aidan","Andrew","Brandon","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Alfonzo","Katie","Lily","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"];
+
+classList=["Adan","Jesus","Midnight","Amber","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Richard","Charlie","Rogelle","Sebastian","Simon","Tommy","Taviaun","Nguyen","William"];
 
 
 
-console.log(classList);
-
+console.log( classList + "  " );
+console.log("length is: " + classList.length);
 
 
 function pickStudent() {
-// random number between zero and .9999999999999999
-var myRandomNum = Math.random();
-myRandomNum =    Math.floor(myRandomNum * (classList.length - 1)  ) ;
-// adjust random number above and share to log
-console.log(myRandomNum);
-var tempId = document.getElementById("outputArea");
-tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
-
-// remove that student from the list
-if (myRandomNum > -1) 
+if ( classList.length > 0 ) 
 	{
-    classList.splice(myRandomNum, 1);
-    // deletion above
-	}
+	var myRandomNum = Math.random();
+    // start with a random number between zero and .9999999999999999
+	var largeNum = myRandomNum * ( classList.length ) ;
+	var roundedNum = Math.floor(largeNum);
+	var adjustedNum = roundedNum + 0 ;
+
+	var tempId = document.getElementById("outputArea");
+	tempId.innerHTML = "the unicorn has picked.... " + classList[adjustedNum]   ;
+
+	// remove that student from the list
+	 classList.splice(adjustedNum, 1);
+	// deletion above
+	// console.log("length is: " + classList.length);
+	console.log("list updated: " + classList);
+    }
+    //end if 
 
 
-console.log("list updated: " + classList)
 }
 // close of function 
 
