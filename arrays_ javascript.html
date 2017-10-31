@@ -11,37 +11,53 @@ var classList = [];
 // period 1
 classList=["isaiah","aaron","cesar","dylan","emma","george","jackson","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
 
-// period 2 
-classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","hoku","ivan","jimmy","josh","kaila","kegan","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
-
-// period 4
-classList=["Adrian","Aidan","Andrew","Brandon","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Alfonzo","Katie","Lily","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"];
-
-// classList=["Adan","Jesus","Midnight","Amber","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Richard","Charlie","Rogelle","Sebastian","Simon","Tommy","Taviaun","Nguyen","William"];
-
-
-
 console.log( classList + "  " );
 console.log("length is: " + classList.length);
+var namesPicked = "";
+
+
+function setP1(){ classList=["isaiah","aaron","cesar","dylan","emma","george","jackson","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
+    console.log("reset period 1");
+}
+
+function setP2(){ 
+classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","hoku","ivan","jimmy","josh","kaila","kegan","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
+    console.log("reset period 2");
+}
+
+function setP4(){ 
+classList=["Adrian","Aidan","Andrew","Brandon","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Alfonzo","Katie","Lily","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"];
+    console.log("reset period 4");
+}
+
+function setP5(){ 
+classList=["Chase","Cameron","Quetzali","Mitchell","Trenton","Abdi","Monique","Daniel","Alex","Gaiden","Isaiah","AJ","Antonio","Oscar","Naton","Sang","Hazel","Max","Zach","Ben","Cece","Violet"]
+    console.log("reset period 5");
+}
+
+function setP6(){ 
+    console.log("reset period 6");
+}
+
+function setP8(){ 
+ classList=["Adan","Jesus","Midnight","Amber","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Richard","Charlie","Rogelle","Sebastian","Simon","Tommy","Taviaun","Nguyen","William"];
+    console.log("reset period 8");
+}
 
 
 function pickStudent() {
 if ( classList.length > 0 ) 
 	{
-	var myRandomNum = Math.random();
-    // start with a random number between zero and .9999999999999999
-	var largeNum = myRandomNum * ( classList.length ) ;
-	var roundedNum = Math.floor(largeNum);
-	var adjustedNum = roundedNum + 0 ;
-
+	var myRandomNum = Math.floor( Math.random()*classList.length   );
 	var tempId = document.getElementById("outputArea");
-	tempId.innerHTML = "the unicorn has picked.... " + classList[adjustedNum]   ;
+	tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
+	namesPicked = classList[myRandomNum] + ", " + namesPicked  ;
 
 	// remove that student from the list
-	 classList.splice(adjustedNum, 1);
+	 classList.splice(myRandomNum, 1);
 	// deletion above
-	// console.log("length is: " + classList.length);
-	console.log("list updated: " + classList);
+	console.log("not-chosen: \n" + classList);
+	console.log(    "chosen: \n" + namesPicked);
     }
     //end if 
 
@@ -64,6 +80,13 @@ if ( classList.length > 0 )
 <p id="outputArea"></p>
 
 <img src="https://c2.staticflickr.com/4/3232/2498310779_87b2415932_m.jpg">
-https://c2.staticflickr.com/4/3232/2498310779_87b2415932_m.jpg
+<br>
 
+<button onclick=setP1()> 1 </button>
+<button onclick=setP2()> 2 </button>
+<button onclick=setP4()> 4 </button>
+<button onclick=setP5()> 5 </button>
+<button onclick=setP6()> 6 </button>
+<button onclick=setP8()> 8 </button>
+ 
 </body>
