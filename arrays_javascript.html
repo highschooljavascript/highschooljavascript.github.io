@@ -1,0 +1,94 @@
+<head>
+<link rel="stylesheet" type="text/css" href="">
+<style type="text/css"> p{font-size: 24pt}</style>
+<title>Unicorn</title>
+
+<script type="text/javascript">
+
+// global varirables
+var classList = [];
+
+// period 1
+classList=["isaiah","aaron","cesar","dylan","emma","george","jackson","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
+
+console.log( classList + "  " );
+console.log("length is: " + classList.length);
+var namesPicked = "";
+
+
+function setP1(){ classList=["isaiah","aaron","cesar","dylan","emma","george","jackson","ian","mason duane","erik","jake","john","gage","kalyn","liam","lucas","saf","naton","oliverb","oliverg","oscar","shayla","raymond","simon"]; 
+    console.log("reset to period 1");
+}
+
+function setP2(){ 
+classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","hoku","ivan","jimmy","josh","kaila","kegan","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
+    console.log("reset period 2");
+}
+
+function setP4(){ 
+classList=["Adrian","Aidan","Andrew","Brandon","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Alfonzo","Katie","Lilian","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"];
+    console.log("reset period 4");
+}
+
+function setP5(){ 
+classList=["Chase","Cameron","Quetzali","Mitchell","Trenton","Abdi","Monique","Daniel","Alex","Gaiden","Isaiah","AJ","Antonio","Oscar","Naton","Sang","Hazel","Max","Zach","Ben","Cece","Violet"]
+    console.log("reset period 5");
+}
+
+function setP6(){ 
+    console.log("reset period 6");
+}
+
+function setP8(){ 
+ classList=["Adan","Jesus","Midnight","Amber","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Richard","Charlie","Rogelle","Sebastian","Simon","Tommy","Taviaun","Nguyen","William"];
+    console.log("reset period 8");
+}
+
+
+function pickStudent() {
+if ( classList.length > 0 ) 
+	{
+	var myRandomNum = Math.floor( Math.random()*classList.length   );
+	var tempId = document.getElementById("outputArea");
+	tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
+	namesPicked = classList[myRandomNum] + ", " + namesPicked  ;
+
+	// remove that student from the list
+	 classList.splice(myRandomNum, 1);
+	// deletion above
+	console.log("not-chosen: \n" + classList);
+	console.log(    "chosen: \n" + namesPicked);
+    }
+    //end if 
+
+
+}
+// close of functions 
+
+</script>
+</head>
+
+
+
+<body>
+<p>JavaScript Arrays/Lists -- Open the console window to see who remains.  Ctrl+Shift+J</p>
+
+<button onclick=pickStudent()  >
+    Pick a student...
+</button>
+
+<br><br>
+<img src="https://i.ytimg.com/vi/ELe76Xw2Bqk/maxresdefault.jpg" height=100>
+<p id="outputArea"></p>
+
+ 
+<br>
+
+<button onclick=setP1()> 1 </button>
+<button onclick=setP2()> 2 </button>
+<button onclick=setP4()> 4 </button>
+<button onclick=setP5()> 5 </button>
+<button onclick=setP6()> 6 </button>
+<button onclick=setP8()> 8 </button>
+ 
+</body>
