@@ -21,7 +21,7 @@ function setP1(){ classList=["isaiah","aaron","cesar","dylan","emma","george","j
 }
 
 function setP2(){ 
-classList=["Alyssa","Amber","alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","ivan","jamisha","jimmy","josh","kaila","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
+classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm","graham","ivan","jamisha","jimmy","josh","kaila","kevin","yusuf","najiib","noel","zach","robert","sten","taison","tenzin","tesahe","williamd","willamn"];
     console.log("reset period 2");
 }
 
@@ -42,7 +42,7 @@ function setP6(){
 }
 
 function setP8(){ 
- classList=["Adan","Jesus","Midnight","Amber","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Richard","Charlie","Sebastian","Tommy","Taviaun","Nguyen","William"];
+ classList=["Adan","Jesus","Charlie","Midnight","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Nguyen","Richard","Sam","Sebastian","Tommy","Taviaun","William"];
     console.log("reset period 8");
 }
 
@@ -52,7 +52,7 @@ if ( classList.length > 0 )
 	{
 	var myRandomNum = Math.floor( Math.random()*classList.length   );
 	var tempId = document.getElementById("outputArea");
-	tempId.innerHTML = "the unicorn has picked.... " + classList[myRandomNum]   ;
+	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " " + myRandomNum   ;
 	namesPicked = classList[myRandomNum] + ", " + namesPicked  ;
 
 	// remove that student from the list
