@@ -25,24 +25,120 @@ classList=["alden","autum","christian","daniel","david","devin","felixg","fleixm
     console.log("reset period 2");
 }
 
+function setP3(){ 
+classList=[
+"Mr. Rowe",
+"Alanna",
+"Amber",
+"Ms Laiz",
+"Britney Creston",
+"Jimena Creston",
+"Xanzelle Creston",
+"Michelle Lane",
+"Malia Lane",
+"Karla Lane",
+"Yahira  Lane",
+"Laila  Lane",
+"Alondra  Lane",
+"Jacqueline  Lane",
+"Jennifer  Lane",
+"Abigail  Lane",
+"Lyndsey  Lane",
+
+
+"Temp"
+];
+    console.log("reset period 3 Visitors");
+}
+
+
+
 function setP4(){ 
 classList=["Adrian","Aidan","Andrew","Brandon","Benson","Caleb","Daniel","Dashiell","Denver","Gray","Joy","Huu","Isaiah","JacobS","JacobW","Jordan","Alfonzo","Katie","Lilian","MichaelB","MichaelM","Nhat","Pascal","Riley","Ripley","Ryan","Timothy"];
     console.log("reset period 4");
 }
 
 function setP5(){ 
-classList=["Trenton","Abdi","Monique","Daniel","Alex","Gaiden","Isaiah","AJ","Antonio","Oscar","Naton","Sang","Hazel","Max","Zach","Ben","Cece","Violet"]
+classList=[
+"Aamir",
+"Abdullahi",
+"Benjamin",
+"Bin",
+"Christian",
+"Colin",
+"Hafez",
+"Isaac",
+"Jacoby",
+"James",
+"Joseph",
+"Logan",
+"Lucas",
+"Najiib",
+"Narcissia",
+"Oliver",
+"Parker",
+"Rui Wei",
+"Ryan",
+"Sadiq",
+"Tenzin",
+]
     console.log("reset period 5");
 }
 
 function setP6(){ 
-    classList=["Khet","Monique","Summer","Jesus","Devin","Gavin","Zach","Nils","Adan","Sebastian"];
+    classList=[
+"Aidan",
+"Belal",
+"Cha Cha",
+"Christian",
+"Denver",
+"Derek",
+"Devin",
+"Frank",
+"Gavin",
+"Hayden",
+"Huu",
+"Jeremy",
+"John",
+"Jordan",
+"Jose",
+"Liam",
+"Mohamed",
+"Nayelli",
+"Nils",
+"R.T.",
+"Shawn",
+"Shayla",
+"Sten",
+    ];
     console.log("reset period 6");
 
 }
 
 function setP8(){ 
- classList=["Adan","Jesus","Charlie","Midnight","Andrew","Colin","Danny","Christian","Amir","Derek","Gaiden","Gerardo","Isaiah","Mountain","James","Jeremy","Lucia","Max","Mika","Noah","Miles","Nguyen","Richard","Sam","Sebastian","Tommy","Taviaun","William"];
+ classList=[
+"Aamir",
+"Adan",
+"Midnight",
+"Andrew",
+"Charles",
+"Colin",
+"Danny",
+"Felix",
+"Gerardo",
+"Jesus",
+"Maxwell",
+"Mika",
+"Miles",
+"Nguyen",
+"Noah",
+"Richard",
+"Sam",
+"Sebastian",
+"SAF",
+"Steven",
+"William",
+ ];
     console.log("reset period 8");
 }
 
@@ -52,8 +148,8 @@ if ( classList.length > 0 )
 	{
 	var myRandomNum = Math.floor( Math.random()*classList.length   );
 	var tempId = document.getElementById("outputArea");
-	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " " + myRandomNum   ;
-	namesPicked = classList[myRandomNum] + ", " + namesPicked  ;
+	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " "    ;
+	namesPicked =  namesPicked + ", " + classList[myRandomNum]  ;
 
 	// remove that student from the list
 	 classList.splice(myRandomNum, 1);
@@ -88,6 +184,7 @@ if ( classList.length > 0 )
 
 <button onclick=setP1()> 1 </button>
 <button onclick=setP2()> 2 </button>
+<button onclick=setP3()> 3 Visitors </button>
 <button onclick=setP4()> 4 </button>
 <button onclick=setP5()> 5 </button>
 <button onclick=setP6()> 6 </button>
