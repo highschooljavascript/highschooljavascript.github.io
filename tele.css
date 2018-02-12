@@ -1,0 +1,25 @@
+body {
+	font-family: Courier New;
+	font-size: 28pt;
+	/*background-color: black;*/
+	color: green
+}
+
+button {
+	font-family: Courier New;
+	margin: 20px;
+	/*font-size: 28pt*/
+}
+
+input {
+	font-family: Courier New;
+	font-size: 28pt;
+	background-color: silver;
+}
+
+#div1 {
+	background-color: yellow;
+	width: 90%;
+	float: left;
+	margin-left: 5%
+}

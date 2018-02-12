@@ -1,0 +1,173 @@
+<head>
+<link rel="stylesheet" type="text/css" href="tele.css">
+<title>Tele App</title>
+<script type="text/javascript">
+
+function myStart(){
+var
+ray1,  
+ray2,  
+ray3,  
+ray4,  
+ray5,  
+ray6,  
+ray7,  
+ray = []; 
+//  all above are empty arrays 
+
+var digit,v,v1,v2,v3,v4,v5,v6,v7,a,b,c,d,e,f,g,i = 0 ;
+
+clearPage();
+
+humanInput = readForm();
+console.log("input: " + humanInput );
+
+// for each of 7 digitis
+for ( i=0; i<=6; i++ )  {
+  digit=humanInput[i+5];
+  digit=eval(digit);
+
+  if ( (digit==1 ) || (digit == 0) ) 
+     { v=0; }
+     else  if ( (digit==7 ) || (digit == 9) ) 
+         { v=3; }
+    	   else
+            { v=2; }
+
+
+  switch (i)   {
+     case 0: v1 = v; break;
+     case 1: v2 = v; break;
+     case 2: v3 = v; break;
+     case 3: v4 = v; break;
+     case 4: v5 = v; break;
+     case 5: v6 = v; break; 
+     case 6: v7 = v; break;
+     }// end switch i
+
+  switch (digit)  {
+    case 1: ray=["1","1","1"]; break;
+    case 2: ray=["A","B","C"]; break;
+    case 3: ray=["D","E","F"]; break;
+    case 4: ray=["G","H","I"]; break;
+    case 5: ray=["J","K","L"]; break;
+    case 6: ray=["M","N","O"]; break;
+    case 7: ray=["P","Q","R","S"]; break;
+    case 8: ray=["T","U","V"]; break;
+    case 9: ray=["W","X","Y","Z"]; break;
+    case 0: ray=["0","0","0"]; break;
+    } // end switch digit
+
+  switch (i)   {
+     case 0: ray1=ray;break;
+     case 1: ray2=ray;break;
+     case 2: ray3=ray;break;
+     case 3: ray4=ray;break;
+     case 4: ray5=ray;break;
+     case 5: ray6=ray;break;
+     case 6: ray7=ray;break;
+     }  // end switch i 
+  } // end for loop to process input
+
+
+// output the results below
+
+console.log("v1: "+v1);
+console.log("v2: "+v2);
+console.log("v3: "+v3);
+console.log("v4: "+v4);
+console.log("v5: "+v5);
+console.log("v6: "+v6);
+console.log("v7: "+v7);
+
+
+
+for ( a=0; a<=v1; a++ ){
+  for (b=0; b<=v2; b++ ){
+    for (c=0; c<=v3; c++ ){
+      for (d=0; d<=v4; d++ ){
+        for (e=0; e<=v5; e++ ){
+          for (f=0; f<=v6; f++ ){
+            for (g=0; g<=v7; g++ )
+            {
+            writeSpan("(503)")  
+            writeSpan(ray1[a]);
+            writeSpan(ray2[b]);
+            writeSpan(ray3[c]);
+            writeSpan("-")
+            writeSpan(ray4[d]);
+            writeSpan(ray5[e]);
+            writeSpan(ray6[f]);
+            writeSpan(ray7[g]);
+            writeLn();
+            }
+          }               
+        }               
+      }               
+    }               
+  }               
+} 
+ 
+} // of of function myStart
+
+
+
+function readForm(){
+	// fetch the form data and call function write
+	var myTemp = form1.text1.value;
+	return myTemp;
+}
+
+
+
+
+
+function writeSpan(messageToWrite){
+  // get ID of the element
+  var myBodyId = document.getElementById("div1");
+  // Create an element child node
+  var myElement = document.createElement("span");             
+  //  create text node
+  var myTextNode = document.createTextNode(messageToWrite);  
+  // Append the text message node to the element
+  myElement.appendChild(myTextNode);                
+  myBodyId.appendChild(myElement);                     
+  // Append element to body
+}  // close of function myF
+
+
+function writeLn(){
+  var myBodyId = document.getElementById("div1");  
+  var myElement = document.createElement("br");             
+  myBodyId.appendChild(myElement);                     
+}  // close of function  
+
+function clearPage(){
+  var myBodyId = document.getElementById("div1");  
+  myBodyId.innerHTML = "";
+}
+
+
+
+
+</script>
+</head>
+
+
+<body id="body1">
+
+<button onclick=myStart()>
+	Type your phone number below, then click me
+</button>
+
+<form name="form1" >
+    <!-- <input name="text1" type="text" value="2387433" > -->
+    <input name="text1" type="text" value="(503)2111111" >
+</form><!-- end of form -->
+
+<div id="div1">
+     Empty Div
+</div>
+
+
+</body>

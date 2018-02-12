@@ -1,14 +1,24 @@
-<link    
-rel="stylesheet" 
-type="text/css"
-href="junk.css" 
->
+<!DOCTYPE html>
+<head>
+<script type="text/javascript"> 
+var counterr = 0;
+function myFunction() {  
+	counterr++;
+	tempId = document.getElementById("paragraph3");
+	// fetch the id of the paragraph then assign new text inside (inner)
+	tempId.innerHTML = "you have clicked" + counterr + "times";
 
+	// alert("hello world" + Math.random() )
+	}
+</script>
+</head>
 <body>
-<div class="sidebar">
-     <div class="button">Ok</div>
-     <div class="button">Cancel</div>
-</div>
-<!-- close sidebar -->
-</body>
+<button onclick=myFunction()>
+	Click me
+</button>
 
+<p id="paragraph3"> 
+    This is text
+</p>
+
+</body>
