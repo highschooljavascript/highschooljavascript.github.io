@@ -19,7 +19,9 @@ input {
 
 #div1 {
 	background-color: yellow;
+	font-family: Courier New;
 	width: 90%;
 	float: left;
-	margin-left: 5%
+	margin-left: 5% ;
+	margin-bottom : 5%;
 }

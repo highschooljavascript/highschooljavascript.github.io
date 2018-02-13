@@ -22,30 +22,33 @@ clearPage();
 humanInput = readForm();
 console.log("input: " + humanInput );
 
-// for each of 7 digitis
-for ( i=0; i<=6; i++ )  {
+// for each of 7 digits
+for ( i=0; i<=6; i++ ){
   digit=humanInput[i+5];
   digit=eval(digit);
 
-  if ( (digit==1 ) || (digit == 0) ) 
-     { v=0; }
-     else  if ( (digit==7 ) || (digit == 9) ) 
-         { v=3; }
-    	   else
-            { v=2; }
+  if ( (digit==1 ) || (digit == 0) ){
+    v=0; 
+  }
+    else if ( (digit==7 ) || (digit == 9) ) { 
+      v=3; 
+    }
+      else{
+        v=2;
+      }
 
 
-  switch (i)   {
-     case 0: v1 = v; break;
-     case 1: v2 = v; break;
-     case 2: v3 = v; break;
-     case 3: v4 = v; break;
-     case 4: v5 = v; break;
-     case 5: v6 = v; break; 
-     case 6: v7 = v; break;
-     }// end switch i
+  switch (i){
+    case 0: v1 = v; break;
+    case 1: v2 = v; break;
+    case 2: v3 = v; break;
+    case 3: v4 = v; break;
+    case 4: v5 = v; break;
+    case 5: v6 = v; break; 
+    case 6: v7 = v; break;
+  }// end switch i
 
-  switch (digit)  {
+  switch (digit){
     case 1: ray=["1","1","1"]; break;
     case 2: ray=["A","B","C"]; break;
     case 3: ray=["D","E","F"]; break;
@@ -56,18 +59,18 @@ for ( i=0; i<=6; i++ )  {
     case 8: ray=["T","U","V"]; break;
     case 9: ray=["W","X","Y","Z"]; break;
     case 0: ray=["0","0","0"]; break;
-    } // end switch digit
+  } // end switch digit
 
-  switch (i)   {
-     case 0: ray1=ray;break;
-     case 1: ray2=ray;break;
-     case 2: ray3=ray;break;
-     case 3: ray4=ray;break;
-     case 4: ray5=ray;break;
-     case 5: ray6=ray;break;
-     case 6: ray7=ray;break;
-     }  // end switch i 
-  } // end for loop to process input
+  switch(i){
+    case 0: ray1=ray;break;
+    case 1: ray2=ray;break;
+    case 2: ray3=ray;break;
+    case 3: ray4=ray;break;
+    case 4: ray5=ray;break;
+    case 5: ray6=ray;break;
+    case 6: ray7=ray;break;
+  }  // end switch i 
+} // end for loop to process input
 
 
 // output the results below
@@ -88,18 +91,17 @@ for ( a=0; a<=v1; a++ ){
       for (d=0; d<=v4; d++ ){
         for (e=0; e<=v5; e++ ){
           for (f=0; f<=v6; f++ ){
-            for (g=0; g<=v7; g++ )
-            {
-            writeSpan("(503)")  
-            writeSpan(ray1[a]);
-            writeSpan(ray2[b]);
-            writeSpan(ray3[c]);
-            writeSpan("-")
-            writeSpan(ray4[d]);
-            writeSpan(ray5[e]);
-            writeSpan(ray6[f]);
-            writeSpan(ray7[g]);
-            writeLn();
+            for (g=0; g<=v7; g++ ){
+              writeSpan("(503)")  
+              writeSpan(ray1[a]);
+              writeSpan(ray2[b]);
+              writeSpan(ray3[c]);
+              writeSpan("-")
+              writeSpan(ray4[d]);
+              writeSpan(ray5[e]);
+              writeSpan(ray6[f]);
+              writeSpan(ray7[g]);
+              writeLn();
             }
           }               
         }               
