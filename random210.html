@@ -23,14 +23,20 @@ var namesPicked = "";
 function setP1(){ classList=[ 
 "AlexH",
 "AlvinL",
+// "AnthonyP",
 "CarterM",
+// "Clifton",
 "DavidM",
 "DicksonC",
+// "DorothyM",
 "EthanO",
+"ElkhanaW",
 "JosiahM",
+// "Jon'na",
 "KapL",
 "KevinN",
 "KeyriH",
+// "LocN",
 "MakyeH",
 "MaxC",
 "MichaelB",
@@ -39,6 +45,8 @@ function setP1(){ classList=[
 "NortonS",
 "PriyankP",
 "RodionT",
+// "TaylorJ",
+// "Tram",
 "SandyT",
 ]; 
 console.log("reset to period 1");
@@ -77,9 +85,11 @@ classList=[
 "AdanV",
 "AidanM",
 "Alayshia",
+"AlexanderT",
 "Amy",
 "Andree",
 "Angel",
+"Bao",
 "Bryce",
 "Carolyn",
 "Charles",
@@ -91,17 +101,20 @@ classList=[
 "Huabin",
 "Huy",
 "Irvine",
+"Lachlan",
 "Madeline",
 "Maximiliano",
-"NicholasH",
+"Nicholas",
 "Sebastian",
 "Jack",
 "Terynce",
 "Tiana",
 "Tyler",
 "Zachary",
-"Brian",
+"Brain",
 "Amanuel",
+"Tabor",
+"Ernesto",
 "Alberto"
 
 ];
@@ -118,14 +131,14 @@ classList=[
 "Alanna",
 "Anthony",
 "Bao",
-"Benji",
+// "Benji",
 "Cristian",
 "Dakota",
 "Dylan",
 "Eliot",
-"Ismael",
+// "Ismael",
 "Jacky",
-"Matthew",
+// "Matthew",
 "Naton",
 "Ruby",
 "Thai",
@@ -173,35 +186,33 @@ classList=[
 function setP6(){ 
     classList=[
 "Alex",
-// "Avery",
+"Avery",
 "Bailey",
 "Bennett",
-// "Caleb",
+"Caleb",
 "Charlotte",
 "Derek",
-// "Dorothy",
-// "Dy'lan",
+"Dorothy",
+"Dy'lan",
 "Eleanor",
 "Emile",
 "Frederick",
 "George",
-// "Isaac",
-// "Jacob",
+"Isaac",
+"Jacob",
 "Jennifer",
 "Jocelyn",
-// "Kaidin",
+"Kaidin",
 "Kevin",
 "Liam",
 "Megan",
 "Mipam",
 "Nathan",
 "NicholasH",
-"Nico",
-// "Samuel",
-// "Sean",
-// "Zuan", 
+"Samuel",
+"Sean",
+"Zuan", 
 "Norton",   
-"Sasha",
 ];
 console.log("reset period 6");
 }
@@ -209,23 +220,24 @@ console.log("reset period 6");
 function setP8(){ 
  classList=[
 // data below
-"Aaron",
-"Yanick",
-"Ae",
-"William",
-"Gray",
-"Andrew",
-"JakeSaiz",
-"JacobW",
-"JacobSt",
-"BrianC",
-"Huy",
-"Trenton",
+// "Aaron",
+// "Yanick",
+// "Ae",
+// "William",
+"Keyara",
+// "Gray",
+// "Andrew",
+// "JakeSaiz",
+// "JacobW",
+// "JacobSt",
+// "BrianC",
+// "Huy",
 "ZuanW",
-"AlexanderR",
-"Nhat",
-"Owen",
-"Rowan"
+// "AlexanderR",
+// "Nhat",
+// "Owen",
+// "Rowan"
+"Trenton"
  ];
 console.log("reset period 8");
 }
@@ -243,8 +255,12 @@ if ( classList.length > 0 )
 	{
 	var myRandomNum = Math.floor( Math.random()*classList.length   );
 	var tempId = document.getElementById("outputArea");
-	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " "    ;
-	namesPicked =  namesPicked + ", " + classList[myRandomNum]  ;
+    var x = Math.floor( Math.random() * 211 ) ; 
+
+	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " " + x   ;
+	
+
+	namesPicked =  namesPicked + ", " + classList[myRandomNum] + x  ;
 
 	// remove that student from the list
 	 classList.splice(myRandomNum, 1);
