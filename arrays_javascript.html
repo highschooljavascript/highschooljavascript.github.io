@@ -1,85 +1,198 @@
-
-
 <!--  This is software written by Mr. Rowe, a software engineer -->
 <!-- this is a comments  -->
-
-
 <head>
-<link rel="stylesheet" type="text/css" href="">
-<style type="text/css"> p{font-size: 24pt}</style>
-<title>Unicorn</title>
+	<title>Unicorn</title>
+	
+	<style type="text/css"> 
+		p{
+		font-size: 24pt;
+		background-color: pink;
+		}
+	</style>
 
 <script type="text/javascript">
 
 // global varirables
 var classList = [];
-
- 
 console.log( classList + "  " );
 console.log("length is: " + classList.length);
 var namesPicked = "";
+var seatNum = 0;
 
 
-function setP1(){ classList=[ 
-"Allen",
-"Albert",
-"Cartmon",
-"Dave",
-"Donny",
-"Edgar",
-"Jody",
-"Kate",
-"Kendra",
-"Karen",
-"MichaelC",
-"Mikeb",
-"MikeH",
-"Mark",
-"Nathan",
-"Noman",
-"Pryman",
-"Raymond",
-"Sandra",
+function setP1(){ 
+classList=[ 
 ]; 
 console.log("reset to period 1");
+seatNum = 1;
 }
 
 
 function setP2(){ 
+// builds array, list
 classList=[
-"",
+"Abdul",
+"Aidan" ,
+"Brandon",
+"Danny" ,
+"Elias" ,
+"Eliot" ,
+"Liza" ,
+"Emma" ,
+"Eric" ,
+"Ivan" ,
+
+"Jessela",
+"Kirill",
+"Minh" ,
+"Emily-Ngan" ,
+"Pablo" ,
+"Paolo" ,
+"Qiwen" ,
+"Mundo" ,
+"Babe Robert" ,
+"Ruby" ,
+
+"Ruin" ,
+"Selma" ,
+"Tilmon" ,
+"Vaden" ,
+"Zachary" ,
 ];
-    console.log("reset period 2");
+console.log("reset period 2");
+seatNum = 1;
+
 }
 
 function setP3(){ 
 classList=[  
-"A",
+"Chris" ,
+"Djinn" ,
+"Dominick" ,
+"Ember", 
+"Eric" ,
+"Huu" ,
+"Huy",
+"Isaiah" ,
+"Liam" ,
+"Linyi" ,
+"Mathew" ,
 
+// "Matvii",
+"Mavric" ,
+// "Miguel", 
+"Nhat" ,
+"Luna" ,
+"Richard" ,
+"Robert" ,
+"Sameer" ,
+"Samuel" ,
+"Tessa",
+
+"Victor" ,
+"William" ,
+"Zack",
 ];
-    console.log("reset period 3  ");
+console.log("reset period 3  ");
+seatNum = 1;
 }
 
 
 
 function setP4(){ 
+seatNum = 3;
 classList=[
-"Aa",
+"Anmol" ,
+"Ashay" ,
+"Dmitriy" ,
+"Faith" ,
+"Fred" ,
+"Gray" ,
+"JakeB" ,
+"JacobS" ,
+"Jose" ,
+"Kirill" ,
+"Lucy" ,
+"Mohamed" ,
+"Nathan" ,
+"Nikolay" ,
+"Tenzing" ,
 ];
     console.log("reset period 4");
 }
 
 function setP5(){ 
+seatNum = 1;
 classList=[
-"D",
+"Alexander" ,
+"Amir" ,
+"Alexis",
+"Ashay" ,
+"Chengen" ,
+"Daivon" ,
+"Finnian" ,
+"Gabe",
+"Garrett" ,
+"Jude" ,
+"Jonathan",
+"Justin" ,
+"KevinO" ,
+"KevinN" ,
+"Khoi" ,
+"Kimberly",
+"Lukas" ,
+"Malcolm" ,
+"Mathew" ,
+"Maxwell" ,
+"Moss" ,
+// "Nhat",
+"Owen",
+"Pavan" ,
+"Phoenix" ,
+"Rowan" ,
+
+"SamuelO" ,
+"SamuelH" ,
+// "SameulL",
+// "Sasha",
+"Tibor" ,
+"Uryel" ,
+
+"William" ,
+"SamuelL" 
 ]
     console.log("reset period 5");
 }
 
-// below is an array  
+// below is an array  a list
 function setP6(){ 
-    classList=[
-"Amy",
+seatNum = 1;
+
+// BELOW IS MY DATA IN AN ARRAY VARIABLE
+classList=[
+
+"Amadou" ,
+"Andres" ,
+"Ashly" ,
+"Brillig" ,
+"Christopher" ,
+"Daniel" ,
+"Diego" ,
+"Elkanah",
+"Greer" ,
+"Isaac" ,
+"HongFu",
+"Jayden" ,
+"Jonah" ,
+"Kennyv" ,
+"Levi" ,
+"Marina" ,
+"Nathan" ,
+"Owen" ,
+"Quinn" ,
+"Simon" ,
+"Sire",
+"Sydney",
 ];
 console.log("reset period 6");
 }
@@ -87,7 +200,25 @@ console.log("reset period 6");
 function setP8(){ 
  classList=[
 // data below
-"Bearry",
+"Adrian" ,
+"Aidan" ,
+"Aidan" ,
+"Andrew" ,
+"David" ,
+"Gray" ,
+"Jasper" ,
+"Julian" ,
+"Kaung" ,
+"Kelsey" ,
+"Kevin" ,
+"Max" ,
+"Nhat" ,
+"Sasha" ,
+"Tabor" ,
+"Taison" ,
+"Teryence",
+"Victor" ,
+ 
  ];
 console.log("reset period 8");
 }
@@ -100,19 +231,41 @@ classList=[
 }
 
 
+// =================================================
+
 function pickStudent() {
+var segment = "";
+var teamNumber = 0;
+var teamSize = 3;
 if ( classList.length > 0 ) 
 	{
 	var myRandomNum = Math.floor( Math.random()*classList.length   );
-	var tempId = document.getElementById("outputArea");
-	tempId.innerHTML = "unicorn picked.... " + classList[myRandomNum] + " "    ;
-	namesPicked =  namesPicked + ", " + classList[myRandomNum]  ;
-
+	var currentPick = classList[myRandomNum];
+	var remainder = (seatNum-1) % teamSize;
+	if ( seatNum==1 || remainder==0   )
+		{
+		teamNumber = eval((seatNum-1)/teamSize+1);
+		segment = " -- Team:" + teamNumber + " seats: " ;
+		}
+		else { 
+			segment = " ";
+			}
+	namesPicked =  namesPicked + segment +  seatNum +") " + currentPick  ;
 	// remove that student from the list
 	 classList.splice(myRandomNum, 1);
-	// deletion above
 	console.log("not-chosen: \n" + classList);
 	console.log(    "chosen: \n" + namesPicked);
+	var tempId = document.getElementById("outputArea");
+	tempId.innerHTML = "unicorn picked.... " + currentPick + " "    ;
+	
+
+	if ( seatNum % 3 == 0 )
+		{seatNum++;}
+		else { 
+			// add 2 for robotics class so empty seat between two members of a team
+			// seatNum = seatNum + 2 
+			seatNum ++;
+			}
     }
     //end if 
 
@@ -134,6 +287,8 @@ if ( classList.length > 0 )
 
 <br><br>
 <img src="https://i.ytimg.com/vi/ELe76Xw2Bqk/maxresdefault.jpg" height=100>
+
+
 <p id="outputArea"></p>
 
  
