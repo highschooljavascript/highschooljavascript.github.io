@@ -35,6 +35,7 @@ text-decoration: underline;
 
 <span id="my1" > </span>
 
+<span >  &nbsp;  Normal black text &nbsp;&nbsp;</span>
 
 
 
@@ -43,31 +44,25 @@ text-decoration: underline;
 // Andy Harris and Joe Rowe
 // Use the style object properties to change your styles with scripts
 // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_create_elmnt
-//
+
 
 var myHead1Id = document.getElementById("my1");
-var myHead2Id = document.getElementById("my2");
-var myHead3Id = document.getElementById("my3");
-var myHead4Id = document.getElementById("my4");
+
 // DOM method getElementbyId  !!!!
 
 // random hex color  example  FFFFFF  black
 var thisColorForeground = Math.floor( Math.random() * 16777215 ) ;
-var thisColorBackground = Math.floor( Math.random() * 16777215 ) ;
 // randomly pick a color above in the spectrum of zero to 16 million
-// below use the 
+
 
 
 var hexStringF = thisColorForeground.toString(16);
-
-
 console.log("foreground: " + " #" + hexStringF);
 
 
+// use the DOM 
 // use innerHTML to change the content
 myHead1Id.innerHTML = "sample link text text color, refresh to change<br> color:#" + hexStringF;
-
-
 // use the property to change the HTML
 myHead1Id.style.color = hexStringF;
  
