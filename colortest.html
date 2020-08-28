@@ -1,18 +1,19 @@
-
-<!-- ============================================================================================== -->
-
-<!--         the main goal here is use Javascript to change styles see the last lines of code  -->
-
-<!-- ================================================================================================= -->
 <html>
 <head>
-<title>Color Flasher JR AH</title>
+	<title>Color Flasher JR AH</title>
 
 
 
 <style type="text/css">
 body {
 padding: 20px;	
+}
+
+div {
+float: left;
+clear: both;
+margin-top: 20px;
+
 }
 
 span { 
@@ -28,14 +29,21 @@ text-decoration: underline;
 
 </head>
 
+
+
 <body >
-
-<span > Normal black text &nbsp;&nbsp;</span>
-
-
+<span > Normal black text&nbsp;</span>
 <span id="my1" > </span>
+<span >  &nbsp;  Normal black text &nbsp;</span>
 
-<span >  &nbsp;  Normal black text &nbsp;&nbsp;</span>
+<div>
+Refesh the page or enter a hex color below:
+<form name="myform">
+	<input name="myText" type="text"  > 
+</form>
+
+<button onclick=myFunction()> submit </button>
+</div>
 
 
 
@@ -68,8 +76,26 @@ myHead1Id.style.color = hexStringF;
  
 
 
-// the end
+function myFunction(){
+	var myHead1Id = document.getElementById("my1");
+	var thisColorForeground = Math.floor( Math.random() * 16777215 ) ;
+	var hexStringF = myform.myText.value;
+	console.log("foreground: " + " #" + hexStringF);
+
+	// use the DOM 
+	// use innerHTML to change the content
+	myHead1Id.innerHTML = "Form color you requested is " + hexStringF;
+	// use the property to change the HTML
+	myHead1Id.style.color = hexStringF;
+}
+
+
+
+
 </script>
+
+
+
 
 </body>
 </html>
