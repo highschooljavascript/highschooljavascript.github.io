@@ -1,11 +1,10 @@
 <!-- ================================================================== -->
-
 <!--   the main goal here is use Javascript to change styles   -->
-
 <!--  ============================================================================= -->
 <html>
 <head>
-<title>Color Flasher JR AH</title>
+	<title>Color Flasher JR AH</title>
+
 <style type="text/css"> 
 
 div { 
@@ -31,22 +30,22 @@ font-size:24pt
 <body >
 
 
-<p >
-Text color changes above changes, <br>
-Background chages below.  Press Refresh
-</p>
+	<p >
+		Background color randomly changes below.  Press Refresh
+	</p>
 
 
-<div id="my3" style="color:white;clear:left" >
-</div>
+	<div id="my3" style="color:white;clear:left" >
+		<!-- empty Div -->
+	</div>
 
-<div id="my4"  >
-</div>
+	<div id="my4"  >
+		<!-- empty Div -->
+	</div>
 
 
 <script>
-// Color Flasher
-// Andy Harris and Joe Rowe
+// Color Flasher Andy Harris and Joe Rowe
 // Use the style object properties to change your styles with scripts
 // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_create_elmnt
 
@@ -57,18 +56,13 @@ var my3Id = document.getElementById("my3");
 var my4Id = document.getElementById("my4");
 
 
-// random hex color  example  FFFFFF  black
-var thisColorForeground = Math.floor( Math.random() * 16777215 ) ;
+// random color decimal
 var thisColorBackground = Math.floor( Math.random() * 16777215 ) ;
 
 
-// randomly pick a color above in the spectrum of zero to 16 million
-// below use the 
-var hexStringF = thisColorForeground.toString(16);
+// convert declimal to hex
 var hexStringB = thisColorBackground.toString(16);
 
-console.log("foreground: " + " #" + hexStringF);
-console.log("background: " + " #" + hexStringB);
 
 // use innerHTML to change the content
 my3Id.innerHTML = "new<br> background-color:#" + hexStringB;
