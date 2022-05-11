@@ -2,10 +2,9 @@
 
 <script type="text/javascript">
 
-function myF()
-{
+function myFunction(){
 
-var memeFileName= "http://winkgo.com/wp-content/uploads/2016/08/67-Hilarious-Teacher-Memes-11.jpg";
+var memeFileName= "67-Hilarious-Teacher-Memes-11.jpg";
 
 
 
@@ -35,7 +34,7 @@ myElement.setAttributeNode(myAttributeH);
 
 // the end,  find a target, then append (place) what we have built..
 
-// get ID of the div that's mostly invisible
+// get ID of the div  
 var myId = document.getElementById("memeresult")	
 myId.appendChild(myElement);                     
 // Append img element to div  should show up asap
@@ -49,7 +48,7 @@ myId.appendChild(myElement);
 </head>
 
 <body>
-<p onclick=myF()>
+<p onclick=myFunction()>
 	click me to append a picture with the attribute src="URL" 
 </p>
 
