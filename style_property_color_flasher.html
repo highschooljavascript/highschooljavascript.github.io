@@ -28,10 +28,8 @@ font-size:24pt
 </head>
 
 <body >
-
-
 	<p >
-		Background color randomly changes below.  Press Refresh
+		Background color randomly changes below.   Press Refresh
 	</p>
 
 
@@ -45,10 +43,6 @@ font-size:24pt
 
 
 <script>
-// Color Flasher Andy Harris and Joe Rowe
-// Use the style object properties to change your styles with scripts
-// https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_create_elmnt
-
 
 
 // DOM method getElementbyId  !!!!
@@ -58,8 +52,6 @@ var my4Id = document.getElementById("my4");
 
 // random color decimal
 var thisColorBackground = Math.floor( Math.random() * 16777215 ) ;
-
-
 // convert declimal to hex
 var hexStringB = thisColorBackground.toString(16);
 
@@ -79,3 +71,10 @@ my4Id.style.backgroundColor = hexStringB;
 
 </body>
 </html>
+
+<!-- 
+Color Flasher Andy Harris and Joe Rowe
+Use the style object properties to change your styles with scripts
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_create_elmnt
+
+ -->

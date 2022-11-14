@@ -1,32 +1,29 @@
 =======================================
 <!--  the main purpose of this is to show the 3 methods to add new page elements
-createElement
-createTextNode
-appendChild
-appendChild
+createElement() method of the DOM
+innerhtml  property
+appendChild() method
   -->
   
 <head>
 <script type="text/javascript">
-function myF (){
-// get ID of the body
-var myBodyId = document.getElementById("bodyId")	
 
+function myFunction (){
+	// get the body element 
+	var myBody = document.getElementById("bodyId")	
 
-// Create an element node
-var myElement = document.createElement("p");             
+	// Create an element 
+	var myElement = document.createElement("p");             
 
-//  create text
-var myTextNode = document.createTextNode("Blah new text");  
+	// Add text
+	myElement.innerHTML = "Blah new text"; 
 
-
-// Append the text message node to the element
-myElement.appendChild(myTextNode);                
-myBodyId.appendChild(myElement);                     
-// Append p element to body
+	// Append p element to body
+	myBody.appendChild(myElement);                     
 
 
 }  // close of function myF
+
 //    http://www.w3schools.com/jsref/met_node_appendchild.asp
 </script>
 
@@ -34,10 +31,9 @@ myBodyId.appendChild(myElement);
 
 
 <body id="bodyId">
-This is the Body, Please start by pressing Ctrl+Shift+j<br><br>
+This is the body of an HTML web page.  Please use your browser tools to open the console. F12 on chrome windows.  Or right click inspect, then find the consle<br><br>
 
- 
-<button onclick=myF()> 
+<button onclick=myFunction()> 
 	Click me.. 
 </button> 
 
