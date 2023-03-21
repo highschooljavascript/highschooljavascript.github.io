@@ -1,0 +1,24 @@
+<script type="text/javascript">
+	function myFunction()  	{
+		var myId = document.getElementById("outputdiv");
+		//  know the ID !!
+		var x = myForm.myText.value;
+		
+		myId.innerHTML = x; 
+		console.log(x)
+	}  // end of function 
+</script>
+
+
+<body>
+
+	<div   id="outputdiv"  onclick=myFunction()  > 
+		Type in anything below, then click this there:   Click here!  
+	</div>
+
+	<form name="myForm" >
+		<input name="myText" type="text" >
+	</form> 
+
+ 
+</body>
