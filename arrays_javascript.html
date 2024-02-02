@@ -3,8 +3,7 @@
 <!--  this is HTML and CSS and JS  -->
 
 <head>
-	<title>Unicorn Arrays</title>
-	
+	<title>Arrays Example</title>
 	<style type="text/css"> 
 		p{
 		font-size: 24pt;
@@ -19,7 +18,9 @@ var classList = [];
 console.log( classList + "  " );
 console.log("length is: " + classList.length);
 var namesPicked = "";
+// seatNum is set by the period reset function also
 var seatNum = 0;
+var teamSize = 2;
 
 
 function setP1(){ 
@@ -36,86 +37,59 @@ function setP2(){
 // classList is data called an array, it's an advanced variable, 
 // numbers and leters are primitivie,  we call ABC a string of letters
 classList=[
-'Alex',
-'Ben',
-'Brandon',
-'Caleb',
-'Denis',
-'Elihu',
-'Hector',
-'Ixaka',
-'Jack',
-'Jared',
-'Jeff',
-'Johannes',
-'Jonah',
-'Kaeden',
-'Kelsey',
-'Logan',
-'Louise',
-'Maggie',
-'MJ',
-'Perry',
-"Ruin",
-'Sam',
-'Skyler',
-'Sophia',
-'Sully',
-'Tavish',
-'Theo',
-'Tina',
-'TJ',
-'Tyson',
-// "souza",
-"rowe",
+'Cara',
+'Claire',
+'Danny',
+"Eden",
+'Finn',
+'Isaac',
+'Jasper',
+'Julian',
+"Levi",
+'Miles',
+'Min',
+'Nolan',
+'Otis',
+'Tyler',
 ];
 // end of the array
-
-
 console.log("reset period 2");
-seatNum = 1;
-
+console.log("total count of students: "  + classList.length);
+seatNum=1;
 }
 
+// a function loads your name into a game. 
 function setP3(){ 
 // classList is data called an array, it's an advanced variable, not a primitive variable
 classList=[  
-'Aaliyah',
-'Adrian',
-'Armando',
-'Cassandra',
-'Colsen',
-'Eason',
-'Eli',
-'Eisley',
-'Ellie',
-'Eric',
-'FinnJ',
-'FinnM',
-'Gabriel',
-'Gio',
-'Gregory',
-'Hein',
-'Jay',
-'JordonP',
-'Joshua',
-'Mateo',
-'Max',
-'Moth',
-'Noah',
-'Ollie',
-'Shubhneet',
-'StevenDo',
-'Tania',
-'Thomas',
-'Uzi',
-'Waylon',
-'Wyatt',
-'Xochitl',
-'Zion',
+'Adonai',
+'Amanda',
+'An',
+'Annie',
+'Bradlee',
+'Bram',
+'Dang',
+'Ethan',
+'Felix',
+'Gabby',
+'Isaac',
+'Ivory',
+'Janny',
+'Larontay',
+'Maayan',
+"Mikah",
+'Mohamed',
+'My',
+'Nola',
+'Oscar',
+'Pavel',
+'Percy',
+'Ulysseus',
+'Xuankai',
 ];
 console.log("reset period 3  ");
-seatNum = 1;
+console.log("how many students:??  " + classList.length     )
+seatNum = 5;
 }
 
 
@@ -123,71 +97,38 @@ seatNum = 1;
 function setP4(){ 
 // classList is data called an array, it's an advanced variable, not a primitive variable
 classList=[
-'Aidan',
-'Anja',
-'Bao',
-'Cole',
-'Daniel',
-'Donovan',
-'Gabe',
-'Huy',
-'Ian',
-'Igor',
-'Isaac',
-'James',
-'JonahT',
-'JonahW',
-'John',
-'Korbin',
-'Kristafer',
-'Landan',
-'Leven',
-'Lionel',
-'Lorenzo',
-'Lucien',
-'Markie',
-'Michael',
-'Mustaf',
-'Nathan',
-"Penelope",
-'Phat',
-'River',
-'Ruben',
-'Pou',
-'Toan',
-'Troy',
+'Alder',
+'Alex',
+'Angelina',
+'Benjamin',
+// 'Cam',
+'Carmen',
+'Chau',
+'Felix',
+'FinnM',
+'FinnN',
+'Kyle',
+'Natalie',
+'Oliver',
+'Sofia',
+'Thomas',
+'Tristan',
+'Vivian',	
 ];
+
+
+
+
+
 console.log("reset period 4");
-seatNum = 1;
+console.log("length of classList: " + classList.length     )
+// starting seat number
+seatNum = 4;
 }
 
 function setP5(){ 
 // classList is datda called an array, it's an advanced variable, not a primitive variable
 classList=[
-'Adiv',
-'AJ',
-'Avery',
-'Christian',
-'Connor',
-'Daniel',
-'David',
-'Eli',
-'Elliott',
-'Evan',
-'Felix',
-"Gifford",
-'Henry',
-'Jack',
-'Jackson',
-'Johnny',
-'Kathy',
-'LiamB',
-'Luke',
-'Oscar',
-'Quan',
-'Ryan',
-'Shane',
-'Veniamin',
 ]
 // close of the array for period 5
 console.log("reset period 5");
@@ -198,38 +139,8 @@ seatNum = 1;
 function setP6(){ 
 // classList is data called an array, it's an advanced reference variable, not a primitive variable
 classList=[
-'Allen',
-'Bill',
-'Cooper',
-'Daniel',
-'Ella',
-'Elliot',
-'Gavin',     
-'Ian',
-'Ivy',
-'Jason',
-'JulianL',
-"Jordan",
-'JulianH',
-'Kian',
-'Le',
-'Moe',
-'Nhi',
-'Nick',
-'Peyton',
-'Quentin',
-'Richard',
-'Siosaia',
-'Silas',
-'Tate',
-'Terry',
-'Titus',
-'Tony',
-"Toan",
-'Toshi',
-'Victoria',
-'Vinh'
 ];
+seatNum = 1;
 console.log("reset period 6");
 }
 
@@ -239,36 +150,89 @@ console.log("reset period 6");
 function setP7(){ 
 // classList is datda called an array, it's an advanced variable, not a primitive variable
 classList=[
-
 ];
+seatNum = 1;
 console.log("reset period 7");
 }
 
 
 function setP8(){ 
+seatNum = 10;
 // classList is datda called an array, it's an advanced variable, not a primitive variable
- classList=[
-// 'Eric',
-'Brillig',
-'Eli',
-'Joshua',
-'Lucien',
-'Markus',
-'Maria',
-'Nghi',
+classList=[
+'Alexander',
+'Angelina',
+'Ayden',
+'Brady',
+'Elgin',
+'Ethan',
+"Kenneth",
+'Leo',
+"Marcos",
+'Pablo',
+'Reed',
+'Sabine',
 'Sean',
-'Sasha',
-'Steven',
- ];
+'Sully',
+"Sunnee",
+'Wesley'
+];
 console.log("reset period 8");
-seatNum = 1;
+console.log("class size: " + classList.length );
 }
 
 
 function setP9(){ 
 classList=[
+'lạn H',
+'Hay da L.',
+'дусалт.',
+'Firdaus M.',
+'Aiden Omalley.',
+'SA M My Haves',
+'Frumt Stimson',
+'Zadzy Stewart',
+'Sugoun Seyoum',
+'Sol Palmore',
+'Gage',
+'aléc',
+'RUSH',
+'elliot',
+'ROTO',
+'ساشه',
+'ATH',
+'Grayson',
+'Asher Tamura',
+'Styles Cabral C) (hoodie only)',
+'Co',
+'keawe Hosaka Choodie on/x)',
+'Abby Perkins Choodie only)',
+'Charlotte Davis Hoodie only pleases)',
+'Tilly maker (hoodie only)',
+'Hazel Choodie only)',
+'Blaine',
+'Field miller',
+'Davign Evang',
+'Sid Shaky a',
+'eli tee',
+'Elif',
+'katrina chan',
+'Makaia williams',
+'Carsons with',
+'Zaynab thiam',
+'Iris Mckeeves',
+'Agata Vitek',
+'Maddy Rodriguez (hoodie only)',
+'Sully chaptow Choodic ohl',
+'Keely Rooney choodie only)',
+'Scarlet Evans (hoodie only)',
+'Keawe hosaka Choodio only)',
+'Violer T. Choudre only)',
+'Katelyn Do (Hoodie only)',
+
 ];
 console.log("reset period 9");
+console.log("total count of students: "  + classList.length);
 seatNum = 1;
 
 }
@@ -276,48 +240,35 @@ seatNum = 1;
 
 // =================================================
 
-function pickStudent() {
+function pickStudent(ts) {
 var segment = "";
 var teamNumber = 0;
-var teamSize = 1;
+var teamSize = ts;
 // are we down to zero students?   
-if ( classList.length > 0 ) 
-	{
+if ( classList.length > 0 )  {
 	// one or more students remain, get a random number. 	
 	var myRandomNum = Math.floor( Math.random()*classList.length   );
 	var currentPick = classList[myRandomNum];
-	var remainder = (seatNum-1) % teamSize;
-	if ( seatNum==1 || remainder==0   )
-		{
-		teamNumber = eval((seatNum-1)/teamSize+1);
-		segment = " " ;
-		// segment = " -- Team:" + teamNumber + " seats: " ;
-		}
-		else { 
-			segment = " ";
-			}
-	
-	namesPicked =  namesPicked + segment +  seatNum +")" + currentPick  ;
+
+	namesPicked =  namesPicked + " " + seatNum +")" + currentPick  ;
 	// remove that student from the list
 	 classList.splice(myRandomNum, 1);
 	console.log("not-chosen: \n" + classList);
 	console.log(    "chosen: \n" + namesPicked);
 	var tempId = document.getElementById("outputArea");
 	tempId.innerHTML = "unicorn picked.... " + currentPick + " "    ;
-	
+ 
+	// add one to the seat number
+	seatNum+=1;
 
-	if ( seatNum % 3 == 0 )
-		{seatNum++;}
-		else { 
-			// for an empty seat between two members of a team
-			// seatNum = seatNum + 2 
-			seatNum ++;
-			}
-    }
-    //end if 
+    } // end if class list not empty
+
+
 
 
 }
+
+
 // close of functions 
 
 </script>
@@ -328,7 +279,7 @@ if ( classList.length > 0 )
 <body>
 <p>JavaScript Arrays/Lists </p>
 
-<button onclick=pickStudent()  >
+<button onclick=pickStudent(teamSize)  >
     Pick a student...
 </button>
 
