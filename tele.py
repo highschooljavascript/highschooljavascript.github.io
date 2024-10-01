@@ -1,7 +1,10 @@
 # asks for your phone number in digits, outputs in alphabet combintations
 # comment 2
 
-humanInput = input("What's your phone number?")
+# use the keyboard to ask the user 
+# humanInput = input("What's your phone number?")
+
+humanInput = "9433754"
 
 digit = 0
 v = 0

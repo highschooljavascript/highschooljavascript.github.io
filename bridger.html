@@ -6,18 +6,19 @@
 <script type="text/javascript">
 function pickNumbers() {
 	var studentList = [];
-	// fill the array
-	for( var i = 1;  i<= 44; i+=1 ) {
+	// fill the array!
+	for( var i = 1;  i<= 6; i+=1 ) {
 		studentList[i] = i;
 	}
 	console.log(studentList);
 
-	for (var j=1; j<=4; j++ ) {
+	// raffle and randomly pic students
+	for (var j=1; j<=40; j++ ) {
 		var r = Math.random() ;
-		r = (studentList.length-1) * r;
+		r = (studentList.length) * r;
 		r = Math.ceil(r);
 		console.log(r);
-		alert(r);
+		// alert(r);
 	}	
 }  
 </script>

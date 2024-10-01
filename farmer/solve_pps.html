@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://www.d.umn.edu/~gshute/cs2511/slides/javascript/code/solve/solve.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Solver Test</title>
+        
+        <script type="text/javascript" src="./solve_pps_files/FarmerState.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/FarmerMove.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/FarmerProblem.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/WaterJugState.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/WaterJugMove.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/WaterJugProblem.js.download"></script>
+        <script type="text/javascript" src="./solve_pps_files/solve.js.download"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                init();
+            };
+        </script>
+    <style>html[dji-sru-rewordify-active] span.dji-sru-rewordify-chunk{background-color:rgba(200,0,0,0)}html[dji-sru-rewordify-active] span.dji-sru-rewordify-chunk.dji-sru-rewordify-match:not([dji-sru-rewordify-ignore]),html[dji-sru-rewordify-active] span.dji-sru-rewordify-chunk.dji-sru-rewordify-match[dji-sru-rewordify-replace]{cursor:help;font-style:italic}span.dji-sru-rewordify-chunk.dji-sru-rewordify-translated{cursor:help}.dji-sru-active a.dji-sru-google-translate-logo{bottom:0;position:fixed;right:40px;z-index:9999999910}.dji-sru-outline-active a.dji-sru-google-translate-logo{bottom:0;position:fixed;right:445px;z-index:9999999910}a.dji-sru-google-translate-logo img.dji-sru-google-translate-logo-img{background:url(chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/translatedByGoogle.png) 0 0/130px 48px no-repeat;display:inline-table;height:0;outline:none;padding-bottom:60px;padding-right:145px;width:0}div[dji-sru-rewordify-popup]{background-color:#fff;border:3px solid #4f6175;border-radius:5px;box-sizing:border-box;-webkit-box-sizing:border-box;color:#000!important;display:none;left:30px;min-height:50px;min-width:300px;opacity:0;overflow:visible;padding:0;pointer-events:none;position:fixed;top:30px;z-index:2147483647}html[dji-sru-fullscreen-popup] div[dji-sru-rewordify-popup]{bottom:10%!important;left:10%!important;right:10%!important;top:10%!important}div[dji-sru-rewordify-body]{bottom:10px;font-family:Arial,sans,sans-serif;font-size:14px;left:20px;outline:none;overflow-x:hidden;overflow-y:auto;position:absolute;right:15px;top:30px;white-space:pre-line}div[dji-sru-rewordify-body]:focus{outline:none}div[dji-sru-rewordify-popup] div.dji-sru-close-btn{background-image:url(chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/close.svg);cursor:pointer!important;display:none;height:25px;position:absolute;right:-14px;top:-14px;width:25px;z-index:2147483647}div[dji-sru-rewordify-popup] div.dji-sru-close-btn:before{content:url(chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/close-hover.svg);height:0;visibility:hidden;width:0}div[dji-sru-rewordify-popup] div.dji-sru-close-btn:hover{background-image:url(chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/close-hover.svg)}@media not print{html[dji-sru-rewordify-active] div[dji-sru-rewordify-popup].dji-working{display:block;left:-10000px;top:-10000px}html[dji-sru-rewordify-active] div[dji-sru-rewordify-popup].dji-visible{display:block;opacity:1;pointer-events:auto}html[dji-sru-rewordify-active] div[dji-sru-rewordify-popup].dji-visible div.dji-sru-close-btn{display:block}}html[dji-sru-rewordify-active] .kix-selection-overlay{opacity:0!important}html[dji-sru-translate-from-cursor]:not([dji-sru-outline-highlight-active=true]):not([dji-sru-speak-from-cursor=true]) body :not(.dji-sru-rewordify-translated){cursor:-webkit-image-set(url("chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/cursor-translate.svg") 1x,url("chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/cursor-translate@2x.svg") 2x) 5 10,auto!important}html[dji-sru-outline-highlight-active] body *{cursor:-webkit-image-set(url("chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/cursor-highlight.svg") 1x,url("chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/resources/images/cursor-highlight@2x.svg") 2x) 5 10,auto!important}</style></head>
+    <body>
+        <table id="problemTable" style="margin:2em">
+	  <tbody><tr>
+              <th colspan="2">Welcome to the <span id="probName">Farmer, Wolf, Goat, and Cabbage</span> Problem</th>
+	  </tr>
+	  <tr>
+              <td colspan="2" id="intro" style="width: 500px; padding-bottom:1em">A farmer and his wolf, goat, and cabbage come to the edge of a river they wish to cross.  There is a boat at the river's edge that only the farmer can row.  The farmer can take at most one other object besides himself on a crossing, but if the wolf is ever left with the goat, the wolf will eat the goat; similarly, if the goat is left with the cabbage, the goat will eat the cabbage.  Devise a sequence of crossings of the river so that all four characters arrive safely on the other side.</td>
+	  </tr>
+	  <tr>
+	    <th>Current State</th>
+	    <th>Possible Moves</th>
+	  </tr>
+	  <tr style="text-align: center">
+	    <td>
+                <textarea id="state" cols="10" rows="6"></textarea>
+	    </td>
+	    <td>
+                <table id="moveTable" style="margin-left: auto; margin-right: auto"><tr><td><input type="button" value="Farmer Goes Alone" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Wolf" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Goat" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Cabbage" style="width: 21ex;"></td></tr></table>
+	    </td>
+	  </tr>
+	  <tr>
+              <th colspan="2" id="message" style="height:2em;color:red"></th>
+	  </tr>
+	  <tr>
+	    <td colspan="2" style="text-align: center">
+	      <input type="button" value="RESET" onclick="reset();">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align: right">Select Problem:</td>
+            <td><select id="selector" onchange="displayProblem();"><option>Farmer, Wolf, Goat, and Cabbage</option><option>Water Jug</option></select></td>
+	  </tr>
+	</tbody></table>
+    
+
+<div dji-sru-rewordify-popup="true"><div class="dji-sru-close-btn"></div><div dji-sru-rewordify-body="true" tabindex="0"><div dji-non-draggable="true"></div></div><div class="dji-geom-ctrl-resize-top"></div><div class="dji-geom-ctrl-resize-bottom"></div><div class="dji-geom-ctrl-resize-left"></div><div class="dji-geom-ctrl-resize-right"></div><div class="dji-geom-ctrl-resize-top-left"></div><div class="dji-geom-ctrl-resize-top-right"></div><div class="dji-geom-ctrl-resize-bottom-right"></div><div class="dji-geom-ctrl-resize-bottom-left"></div><div class="geomCtrlContainerOverlay"></div></div><div id="dji-sru-busy-state"></div><dji-sru-distraction><template shadowrootmode="open"><style>@font-face {
+    font-family: "Quattrocento Sans";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../resources/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quattrocento";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../resources/fonts/Quattrocento/Quattrocento-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Alegreya Italic";
+    font-style: italic;
+    font-weight: normal;
+    src: url(../resources/fonts/Alegreya/Alegreya-Italic.ttf) format("truetype");
+}
+
+/* ----------------------------------------------------------------------
+   light/dark theme
+   ---------------------------------------------------------------------- */
+
+html.dji-sru-distractions-active, html[dji-theme=light] {
+    --dji-sru-distraction-background-color: #FFFFFF;
+    --dji-sru-distraction-main-color: rgba(0, 0, 0, .87);
+    --dji-sru-distraction-title-color: rgba(0, 0, 0, 1);
+    --dji-sru-distraction-author-color: rgba(0, 0, 0, 0.5);
+    --dji-sru-distraction-header-color: rgba(0, 0, 0, 1);
+    --dji-sru-distraction-a-color: #607d8b;
+    --dji-sru-distraction-a-hover-color: #55a64;
+    --dji-sru-distraction-a-hover-underline-border-color: #78909c;
+    --dji-sru-distraction-pre-background-color: rgba(0, 0, 0, 0.05);
+    --dji-sru-distraction-blockquote-color: rgba(0, 0, 0, 0.5);
+    --dji-sru-distraction-blockquote-border-color: rgba(0, 0, 0, 0.5);
+    --dji-sru-distraction-caption-color: rgba(0, 0, 0, 0.5);
+    --dji-sru-distraction-table-color: rgba(0, 0, 0, .87);
+}
+
+html[dji-theme=dark] {
+    --dji-sru-distraction-background-color: #000000;
+    --dji-sru-distraction-main-color: #FFFFFF;
+    --dji-sru-distraction-title-color: rgba(255, 255, 255, 1);
+    --dji-sru-distraction-author-color: rgba(255, 255, 255, 0.5);
+    --dji-sru-distraction-header-color: rgba(255, 255, 255, 1);
+    --dji-sru-distraction-a-color: #607d8b;
+    --dji-sru-distraction-a-hover-color: #55a64;
+    --dji-sru-distraction-a-hover-underline-border-color: #78909c;
+    --dji-sru-distraction-pre-background-color: rgba(255, 255, 255, .05);
+    --dji-sru-distraction-blockquote-color: rgba(255, 255, 255, 0.5);
+    --dji-sru-distraction-blockquote-border-color: rgba(255, 255, 255, 0.5);
+    --dji-sru-distraction-caption-color: rgba(255, 255, 255, 0.5);
+    --dji-sru-distraction-table-color: rgba(255, 255, 255, .87);
+}
+
+/* ----------------------------------------------------------------------
+   distraction
+   ---------------------------------------------------------------------- */
+
+.dji-sru-distractions-active body {
+    background-color: var(--dji-sru-distraction-background-color);
+}
+
+html[dji-sru-distractions-active] {
+    width: 100% !important;
+}
+
+.dji-sru-remove-distractions-iframe {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    border: none;
+    box-shadow: 0 -8px 24px 2px rgba(0, 0, 0, 0.14), 0 -3px 30px 5px rgba(0, 0, 0, 0.12), 0 -4px 10px 0 rgba(0, 0, 0, 0.20);
+}
+
+html.dji-no-scroll {
+    overflow: hidden !important;
+}
+
+.dji-sru-distractions-main {
+    color: var(--dji-sru-distraction-main-color);
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    max-width: 600px;
+    padding: 0 56px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.dji-sru-distractions-header {
+    display: none;
+    margin: 0 auto 10px;
+}
+
+.dji-sru-distractions-header.dji-visible {
+    display: block;
+}
+
+.dji-sru-distractions-author {
+    font-family: "Quattrocento";
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--dji-sru-distraction-author-color);
+}
+
+.dji-sru-distractions-title {
+    font-size: 36px;
+    font-family: "Quattrocento";
+    line-height: 1.3;
+    color: var(--dji-sru-distraction-title-color);
+    text-align: left;
+    margin: 72px 0 24px 0;
+}
+
+.dji-sru-distractions-content {
+    margin-bottom: 100px;
+}
+
+.dji-sru-distractions-content a {
+    color: var(--dji-sru-distraction-a-color);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.dji-sru-distractions-content a:hover {
+    color: var(--dji-sru-distraction-a-hover-color);
+    border-bottom: 1px var(--dji-sru-distraction-a-hover-underline-border-color) solid;
+}
+
+.dji-sru-distractions-content img, .dji-sru-distractions-content video {
+    width: 100%;
+    height: auto;
+    margin: 24px 0;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+}
+
+.dji-sru-distractions-content figure {
+    margin-inline-start: 0;
+}
+
+.dji-sru-distractions-content h1, .dji-sru-distractions-content .h1 {
+    font-family: "Quattrocento";
+    color: var(--dji-sru-distraction-header-color);
+    font-size: 36px;
+    line-height: 1.5;
+    margin: 32px 0 64px 0;
+    font-weight: normal;
+}
+
+.dji-sru-distractions-content h2, .dji-sru-distractions-content .h2 {
+    font-family: "Quattrocento";
+    color: var(--dji-sru-distraction-header-color);
+    font-size: 32px;
+    line-height: 1.4;
+    margin: 32px 0;
+    font-weight: normal;
+}
+
+.dji-sru-distractions-content h3, .dji-sru-distractions-content .h3 {
+    font-family: "Quattrocento";
+    color: var(--dji-sru-distraction-header-color);
+    font-size: 30px;
+    line-height: 1.4;
+    margin: 32px 0;
+    font-weight: normal;
+}
+
+.dji-sru-distractions-content h4, .dji-sru-distractions-content .h4 {
+    font-family: "Quattrocento";
+    color: var(--dji-sru-distraction-header-color);
+    font-size: 28px;
+    line-height: 1.4;
+    margin: 32px 0;
+    font-weight: normal;
+}
+
+.dji-sru-distractions-content h5, .dji-sru-distractions-content .h5 {
+    font-family: "Quattrocento";
+    color: var(--dji-sru-distraction-header-color);
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 32px 0;
+    font-weight: normal;
+}
+
+.dji-sru-distractions-content p, .dji-sru-distractions-content ul, .dji-sru-distractions-content ol, .dji-sru-distractions-content pre, .dji-sru-distractions-content table, .dji-sru-distractions-content blockquote {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.dji-sru-distractions-content pre {
+    font-family: Monaco, monospace;
+    font-size: 16px;
+    padding: 0 20px;
+    white-space: pre;
+    margin: 0;
+    background-color: var(--dji-sru-distraction-pre-background-color);
+    overflow: auto;
+    direction: ltr !important;
+}
+
+.dji-sru-distractions-content pre * {
+    font-family: Monaco, monospace;
+}
+
+.dji-sru-distractions-content blockquote {
+    font-family: "Alegreya Italic";
+    font-size: 24px;
+    color: var(--dji-sru-distraction-blockquote-color);
+    margin: 0 0 20px 0;
+    padding: 1em;
+    border-left: 2px solid var(--dji-sru-distraction-blockquote-border-color);
+);
+}
+
+.dji-sru-distractions-content .caption, .dji-sru-distractions-content .pb-caption, .dji-sru-distractions-content .wp-caption-text, .dji-sru-distractions-content figcaption, .dji-sru-distractions-content cite {
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--dji-sru-distraction-caption-color);
+}
+
+.dji-sru-distractions-content table {
+    color: var(--dji-sru-distraction-table-color);
+}
+
+@media only screen and (max-width: 1098px) {
+
+    .dji-sru-outline-active .dji-sru-distractions-main {
+        font-size: 18px;
+        letter-spacing: 0;
+        padding: 0 20px;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-title, .dji-sru-outline-active .dji-sru-distractions-content h1, .dji-sru-outline-active .dji-sru-distractions-content .h1 {
+        font-size: 28px;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-content h2, .dji-sru-outline-active .dji-sru-distractions-content .h2 {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-content h3, .dji-sru-outline-active .dji-sru-distractions-content .h3 {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-content h4, .dji-sru-outline-active .dji-sru-distractions-content .h4 {
+        font-size: 19px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-content h5, .dji-sru-outline-active .dji-sru-distractions-content .h5 {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-outline-active .dji-sru-distractions-content pre {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 656px) {
+    .dji-sru-distractions-main {
+        font-size: 18px;
+        letter-spacing: 0;
+        padding: 0 20px;
+    }
+
+    .dji-sru-distractions-title, .dji-sru-distractions-content h1, .dji-sru-distractions-content .h1 {
+        font-size: 28px;
+    }
+
+    .dji-sru-distractions-content h2, .dji-sru-distractions-content .h2 {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-distractions-content h3, .dji-sru-distractions-content .h3 {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-distractions-content h4, .dji-sru-distractions-content .h4 {
+        font-size: 19px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-distractions-content h5, .dji-sru-distractions-content .h5 {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .dji-sru-distractions-content pre {
+        font-size: 14px;
+    }
+}
+
+@media print {
+	#dji-sru-remove-distractions-iframe {
+	display: none;
+	}
+}</style><iframe id="dji-sru-remove-distractions-iframe" class="dji-sru-remove-distractions-iframe"></iframe></template></dji-sru-distraction><div dji-sru-rewordify-popup="true"><div class="dji-sru-close-btn"></div><div dji-sru-rewordify-body="true" tabindex="0"><div dji-non-draggable="true"></div></div><div class="dji-geom-ctrl-resize-top"></div><div class="dji-geom-ctrl-resize-bottom"></div><div class="dji-geom-ctrl-resize-left"></div><div class="dji-geom-ctrl-resize-right"></div><div class="dji-geom-ctrl-resize-top-left"></div><div class="dji-geom-ctrl-resize-top-right"></div><div class="dji-geom-ctrl-resize-bottom-right"></div><div class="dji-geom-ctrl-resize-bottom-left"></div><div class="geomCtrlContainerOverlay"></div></div></body><dji-sru id="__dji_sru_components"><template shadowrootmode="open"><iframe id="dji_sru_define_word" style="left: 0px; top: 0px; width: 100%; height: 100%; position: fixed;"></iframe></template></dji-sru><dji-sru id="__dji_sru_main_container"><template shadowrootmode="open"><iframe dji-template-id="__dji_sru_main_container_iframe" scrolling="no" seamless="" class="dji-sru-initial dji-sru-initial-display dji-sru-no-printable" id="__dji_sru_main_container_iframe" style="border: none; width: 100%; height: 100%;"></iframe></template></dji-sru></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://www.d.umn.edu/~gshute/cs2511/slides/javascript/code/solve/solve.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Solver Test</title>
+        
+        <script type="text/javascript" src="./solve_files/FarmerState.js.download"></script>
+        <script type="text/javascript" src="./solve_files/FarmerMove.js.download"></script>
+        <script type="text/javascript" src="./solve_files/FarmerProblem.js.download"></script>
+        <script type="text/javascript" src="./solve_files/WaterJugState.js.download"></script>
+        <script type="text/javascript" src="./solve_files/WaterJugMove.js.download"></script>
+        <script type="text/javascript" src="./solve_files/WaterJugProblem.js.download"></script>
+        <script type="text/javascript" src="./solve_files/solve.js.download"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                init();
+            };
+        </script>
+    </head>
+    <body>
+        <table id="problemTable" style="margin:2em">
+	  <tbody><tr>
+              <th colspan="2">Welcome to the <span id="probName">Farmer, Wolf, Goat, and Cabbage</span> Problem</th>
+	  </tr>
+	  <tr>
+              <td colspan="2" id="intro" style="width: 500px; padding-bottom:1em">A farmer and his wolf, goat, and cabbage come to the edge of a river they wish to cross.  There is a boat at the river's edge that only the farmer can row.  The farmer can take at most one other object besides himself on a crossing, but if the wolf is ever left with the goat, the wolf will eat the goat; similarly, if the goat is left with the cabbage, the goat will eat the cabbage.  Devise a sequence of crossings of the river so that all four characters arrive safely on the other side.</td>
+	  </tr>
+	  <tr>
+	    <th>Current State</th>
+	    <th>Possible Moves</th>
+	  </tr>
+	  <tr style="text-align: center">
+	    <td>
+                <textarea id="state" cols="10" rows="6"></textarea>
+	    </td>
+	    <td>
+                <table id="moveTable" style="margin-left: auto; margin-right: auto"><tr><td><input type="button" value="Farmer Goes Alone" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Wolf" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Goat" style="width: 21ex;"></td></tr><tr><td><input type="button" value="Farmer Takes Cabbage" style="width: 21ex;"></td></tr></table>
+	    </td>
+	  </tr>
+	  <tr>
+              <th colspan="2" id="message" style="height:2em;color:red"></th>
+	  </tr>
+	  <tr>
+	    <td colspan="2" style="text-align: center">
+	      <input type="button" value="RESET" onclick="reset();">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align: right">Select Problem:</td>
+            <td><select id="selector" onchange="displayProblem();"><option>Farmer, Wolf, Goat, and Cabbage</option><option>Water Jug</option></select></td>
+	  </tr>
+	</tbody></table>
+    
+
+</body></html>
