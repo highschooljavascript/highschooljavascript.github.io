@@ -1,0 +1,45 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<button onclick=micButtonClicked()>
+		start microphone 
+	</button>
+
+
+
+<script type="text/javascript">
+	//event:
+const micButtonClicked = () => {
+
+    //check the access:
+    isMicrophoneAllowed(isAllowed => {
+        if(isAllowed)
+            record();
+        else
+            navigator.mediaDevices.getUserMedia({audio: true})
+            .then(stream => record())
+            .catch(err => alert('need permission to use microphone'));
+    });
+}
+
+//isMicrophoneAllowed:
+const isMicrophoneAllowed = callback => {
+    navigator.permissions.query({name: 'microphone'})
+    .then(permissionStatus => Strings.runCB(callback, permissionStatus.state === 'granted'));
+}
+
+//record:
+const record = () => {
+    // start recording...
+}
+</script>
+</body>
+</html>

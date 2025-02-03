@@ -1,0 +1,95 @@
+<!--  Author: Mr Rowe, Portland Oregon
+
+ citation: 
+ https://www.stephengarside.co.uk/blog/getusermedia-microphone-example/  
+  by: stephen garside
+
+I googled method  .getUserMedia() demo microphone to speakers 
+
+ I learned about getUserMedia() from reading old 2015 code samples and then looking at errors in the browser console 
+
+	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia 
+
+ https://stackoverflow.com/questions/27846392/access-microphone-from-a-browser-javascript/79072049#79072049
+ 
+end of comments 
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		p {
+			font-size: 2vw;
+		}
+		div {
+			width: 20vh;
+			height: 3vw;
+			padding: 2vw;
+			font-size: 2vw;
+			border-radius: 1.5vw;
+			background-color: grey;
+			border: solid 3px black;
+			box-shadow: 10px 10px;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<audio id="audioCapture"></audio>
+
+
+	<p >
+		This is a mostly blank page for live captions on any chromebook or device. It should auto start live chrome captions like CNN video. currently not working.   ( this assumes you have enabled live captions from 
+		<a href="chrome://settings/accessibility">
+			chrome://settings/accessibility
+		</a>
+		)
+	</p>
+
+	<div onclick=audioCapture.Init() >
+		start microphone 
+	</div >
+
+
+<script type="text/javascript">
+	
+var audioCapture = (function ()
+{
+    var init = function ()
+    {
+        initCapture();
+    };
+ 
+    function initCapture()
+    {
+        var constraints = { audio: true, video: false };
+ 
+        navigator.mediaDevices.getUserMedia(constraints).then(function (stream)
+        {
+            var audio = document.getElementById('audioCapture');
+            audio.srcObject = stream;
+            audio.play();
+        }).catch(function (err)
+        {
+            console.log(err);
+        });
+    }
+ 
+    return {
+        Init: init
+    }
+})();
+
+</script>
+
+
+</body>
+</html>
+
+
